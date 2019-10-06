@@ -1,8 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import renderer from 'react-test-renderer';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+import Accounts from '../account/Accounts';
+import Permissions from '../permissions/Permissions';
+import PopUp from '../popUp/genericPopUp';
+
+const component = renderer.create(<App />);
+it('Correct render of account section', () => {
+    expect(component.toJSON())
+        .toMatchSnapshot();
+
+    expect(component.root.findByType(Accounts).props).toEqual({
+      id: 'AccountSection',
+    });
+});
+
+it('Correct render of permission section', () => {
+    expect(component.toJSON())
+        .toMatchSnapshot();
+
+    expect(component.root.findByType(Permissions).props).toEqual({
+      id: 'PermissionSection',
+    });
 });

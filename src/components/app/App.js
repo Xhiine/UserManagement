@@ -160,7 +160,7 @@ export default function App() {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Accounts />
+                <Accounts id="AccountSection" />
               </Paper>
             </Grid>
           </Grid>
@@ -169,7 +169,7 @@ export default function App() {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Permissions />
+                <Permissions id="PermissionSection" />
               </Paper>
             </Grid>
           </Grid>
